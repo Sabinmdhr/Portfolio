@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/0e5bb9b2c3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- --------------Header Section---------------- -->
+  <div id="header">
+    <div class="container">
+      <nav data-animate="fade-down">
+        <i class="fa-solid fa-house"></i>
+        <ul id="menu">
+          <li><a href="#header" onclick="closemenu()">Home</a></li>
+          <li><a href="#about_us" onclick="closemenu()">About Me </a></li>
+          <li><a href="#project" onclick="closemenu()">Projects</a></li>
+          <li><a href="#contact-us" onclick="closemenu()">Contact ME</a></li>
+          <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+      <h1 class="heading" data-animate="fade-up">
+        Hi My Name is Sabin Manandhar <br />
+        I'm a FrontEnd Developer
+      </h1>
+    </div>
+  </div>
+
+  <!-- ----------------About Us Section---------------- -->
+  <div id="about_us">
+    <div class="container">
+      <div class="row">
+        <div class="col-1" data-animate="fade-right">
+          <img src="images/id.jpg" alt="" />
+        </div>
+        <div class="col-2" data-animate="fade-left">
+          <h1 class="subtitle">About Me</h1>
+          <p class="about-para">
+            I'm a Frontend Developer passionate about creating modern,
+            responsive, and visually appealing web applications. With
+            experience in React, Next.js, JavaScript, and UI/UX principles, I
+            focus on developing fast, clean, responsive, and user-friendly
+            websites.
+          </p>
+          <ul>
+            <p class="tab-links active-link">Skills</p>
+            <p class="tab-links">Education</p>
+            <p class="tab-links">Languages</p>
+          </ul>
+          <div class="tab-skills">
+            <span class="title">Web App Design</span>
+            <p class="para">Web App Development</p>
+            <span class="title">UI/UX</span>
+            <p class="para">Designing Web App Interfaces</p>
+          </div>
+          <div class="tab-education">
+            <span class="title">Kathmandu University</span>
+            <p class="para">Bachelor in Computer Sience</p>
+            <span class="title">Khwopa Secondary School</span>
+            <p class="para">+2 Science</p>
+          </div>
+          <div class="tab-Languages">
+            <span class="title">JavaScript</span>
+            <span class="title">HTML</span>
+            <span class="title">CSS</span>
+            <span class="title">C</span>
+            <span class="title">C++</span>
+            <span class="title">Java</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- -------------------Projects Section---------------- -->
+  <div id="project">
+    <div class="container">
+      <h1 class="subtitle" data-animate="fade-up">My Works</h1>
+      <div class="portfolio">
+        <div class="work" data-animate="zoom-in" data-delay="100">
+          <img src="images/etc.png" alt="" />
+          <div class="layer">
+            <h3>Etc-Movies</h3>
+            <p>Online Platform for watching movies online</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work" data-animate="zoom-in" data-delay="200">
+          <img src="images/Taskify.png" alt="" />
+          <div class="layer">
+            <h3>Taskify</h3>
+            <p>
+              A simple Task Manager app made using HTML, CSS and JavaScript
+            </p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work" data-animate="zoom-in" data-delay="300">
+          <img src="images/Quiz.png" alt="" />
+          <div class="layer">
+            <h3>Quiz App</h3>
+            <p>A simple quiz app made using HTML, CSS and JavaScript</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ----------------------Contact Us Section---------------- -->
+  <div id="contact-us">
+    <div class="container">
+      <div class="subtitle" data-animate="fade-up">Contact Me</div>
+      <div class="contact-row">
+        <div class="contact-1" data-animate="fade-right">
+          <i class="fa-solid fa-phone"></i><span>+977 9763203977</span>
+          <br />
+          <i class="fa-solid fa-envelope"></i><span><a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=sabinmanandhar22@gmail.com">
+              sabinmanandhar22@gmail.com</a></span>
+          <div class="socials">
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+        <div class="contact-2" data-animate="fade-left">
+          <form action="submit">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea name="Message" id="" rows="6" placeholder="Your Message"></textarea>
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  const tabLinks = document.getElementsByClassName("tab-links");
+  const tabSkills = document.getElementsByClassName("tab-skills");
+  const tabEducation = document.getElementsByClassName("tab-education");
+  const tabLanguages = document.getElementsByClassName("tab-Languages");
+
+  function opentab(tabname) {
+    if (tabname === "Skills") {
+      tabSkills[0].style.display = "block";
+      tabEducation[0].style.display = "none";
+      tabLanguages[0].style.display = "none";
+    } else if (tabname === "Education") {
+      tabSkills[0].style.display = "none";
+      tabEducation[0].style.display = "block";
+      tabLanguages[0].style.display = "none";
+    } else {
+      tabSkills[0].style.display = "none";
+      tabEducation[0].style.display = "none";
+      tabLanguages[0].style.display = "block";
+    }
+  }
+
+  for (let i = 0; i < tabLinks.length; i++) {
+    tabLinks[i].addEventListener("click", function () {
+      for (let j = 0; j < tabLinks.length; j++) {
+        tabLinks[j].classList.remove("active-link");
+      }
+      this.classList.add("active-link");
+      opentab(this.innerText);
+    });
+  }
+  // Set default tab
+  opentab("Skills");
+
+  var menu = document.getElementById("menu");
+  function openmenu() {
+    menu.style.right = "0";
+  }
+  function closemenu() {
+    menu.style.right = "-200px";
+  }
+
+  // ============ SCROLL ANIMATIONS ============
+  // Intersection Observer for scroll animations (repeats every time element is visible)
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add animation class when element enters viewport
+        entry.target.classList.add('animate-in');
+      } else {
+        // Remove animation class when element leaves viewport (so it can animate again)
+        entry.target.classList.remove('animate-in');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with data-animate attribute
+  document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('[data-animate]');
+    animatedElements.forEach(el => observer.observe(el));
+  });
+
+  // Parallax effect for header (stops when reaching Portfolio section)
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const header = document.getElementById('header');
+    const portfolioSection = document.getElementById('project');
+
+    if (header && portfolioSection) {
+      // Get the position where portfolio section starts
+      const portfolioTop = portfolioSection.offsetTop;
+      const headerHeight = header.offsetHeight;
+
+      // Calculate the maximum parallax movement
+      const maxParallax = (portfolioTop - headerHeight) * 0.5;
+
+      // Only apply parallax if we haven't reached the portfolio section
+      if (scrolled < portfolioTop - headerHeight) {
+        // Normal parallax effect - header moves with scroll
+        header.style.transform = `translateY(${scrolled * 0.5}px)`;
+      } else {
+        // Stop at maximum position when reaching portfolio section
+        header.style.transform = `translateY(${maxParallax}px)`;
+      }
+    }
+  });
+</script>
+
+</html>
